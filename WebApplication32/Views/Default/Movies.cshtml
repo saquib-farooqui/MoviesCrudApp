@@ -1,0 +1,48 @@
+﻿@model WebApplication32.Models.MoviesViewModel
+@{
+    ViewBag.Title = "Movies";
+}
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Director</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in Model.listofmovies)
+        {
+            <tr>
+                <td>@i.Name</td>
+                <td>@i.Director</td>
+                <td>@i.Year</td>
+
+            </tr>
+        }
+    <tr>
+        @using (Html.BeginForm("Movies", "Default", FormMethod.Post))
+        {
+            <td>@Html.TextBoxFor(m => m.newmovie.Name)</td>
+            <td>@Html.TextBoxFor(m => m.newmovie.Year)</td>
+            <td>@Html.TextBoxFor(m => m.newmovie.Director)</td>
+
+            <td><input type="Submit" value="Create" /></td>
+            
+        }
+    </tr>
+        </tbody>
+
+
+
+
+
+
+
+
+
+</table>
+
