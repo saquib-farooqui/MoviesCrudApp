@@ -8,8 +8,8 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Year</th>
             <th>Director</th>
+            <th>Year</th>
         </tr>
     </thead>
     <tbody>
@@ -20,15 +20,32 @@
                 <td>@i.Name</td>
                 <td>@i.Director</td>
                 <td>@i.Year</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Default", new { id = i.Id })">Edit</a>
 
+                    
+                </td>
+                <td>
+                    <a href="@Url.Action("Delete", "Default", new { id = i.Id })">Delete</a>
+
+                </td>
             </tr>
         }
     <tr>
         @using (Html.BeginForm("Movies", "Default", FormMethod.Post))
         {
-            <td>@Html.TextBoxFor(m => m.newmovie.Name)</td>
-            <td>@Html.TextBoxFor(m => m.newmovie.Year)</td>
-            <td>@Html.TextBoxFor(m => m.newmovie.Director)</td>
+            <td>@Html.TextBoxFor(m => m.newmovie.Name)
+                @Html.ValidationMessageFor(m=> m.newmovie.Name)
+        </td>
+                
+            <td>
+                @Html.TextBoxFor(m => m.newmovie.Director)
+                        @Html.ValidationMessageFor(m => m.newmovie.Director)
+                    </td>
+            <td>
+                @Html.TextBoxFor(m => m.newmovie.Year)
+                        @Html.ValidationMessageFor(m => m.newmovie.Year)
+                    </td>
 
             <td><input type="Submit" value="Create" /></td>
             

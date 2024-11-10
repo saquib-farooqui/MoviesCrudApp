@@ -1,0 +1,42 @@
+﻿@model WebApplication32.Models.Movies
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<table>
+
+    <tr>
+        @using (Html.BeginForm("Delete", "Default", FormMethod.Post))
+        {
+            <td>
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+            </td>
+
+            <td>
+                @Html.TextBoxFor(m => m.Director)
+                @Html.ValidationMessageFor(m => m.Director)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Year)
+                @Html.ValidationMessageFor(m => m.Year)
+            </td>
+
+            <td><input type="Submit" value="Delete" /></td>
+
+        }
+    </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+</table>

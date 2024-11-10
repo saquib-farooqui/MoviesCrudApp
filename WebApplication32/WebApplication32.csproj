@@ -172,6 +172,8 @@
     <Content Include="Views\Default\Registration.cshtml" />
     <Content Include="Views\Default\Login.cshtml" />
     <Content Include="Views\Default\Movies.cshtml" />
+    <Content Include="Views\Default\Edit.cshtml" />
+    <Content Include="Views\Default\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
